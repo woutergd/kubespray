@@ -159,6 +159,37 @@ cert_manager_enabled: false
 #   -----END CERTIFICATE-----
 # cert_manager_leader_election_namespace: kube-system
 
+# Kube-VIP deployment
+kube_vip_enabled: false
+#
+# Define an HA address to access the control plane / API server
+#kube_vip_controlplane_enabled: true
+#kube_vip_address: 10.42.42.42
+#loadbalancer_apiserver:
+#  address: "{{ kube_vip_address }}"
+#  port: 6443
+#
+# Enable access of the services through kube-vip (e.g. loadbalancer). To get this
+# full configured, check also the manual to deploy the kube-vip cloud provder:
+# https://kube-vip.io/docs/usage/cloud-provider/
+#kube_vip_services_enabled: true
+#kube_vip_services_interface: ens320
+#
+# Configure the mode to assign these IP's, either ARP of BGP. Check
+# for more information the docs at https://kube-vip.io/docs/modes/
+#kube_vip_arp_enabled: true # Don't forget to set 'kube_proxy_strict_arp: true'
+#kube_vip_interface: ens160
+#kube_vip_bgp_enabled: true
+#kube_vip_bgp_routerid: 192.168.0.2
+#kube_vip_local_as: 65000
+#kube_vip_peer_as: 65000
+# Set either the kube_vip_bgppeers or kube_vip_bgp_peeraddress. 
+# kube_vip_peeraddress takes precedence over kube_vip_bgppeers.
+#kube_vip_bgppeers:
+#- 192.168.0.10:65000::false
+#- 192.168.0.11:65000::false
+#kube_vip_bgp_peer_address: 192.168.0.10
+
 # MetalLB deployment
 metallb_enabled: false
 metallb_speaker_enabled: "{{ metallb_enabled }}"
